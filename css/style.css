@@ -44,14 +44,24 @@ body {
     .palette .tertiary {
       background-color: var(--tertiary);
     }
+    .btn-pokemon{
+    	border: none;
+      outline: 0;
+      background-color: #0b41a3;
+      color: white;
+      height: 65px;
+      width: auto;
+    }
 
     input {
       padding: 1em 2em;
       font-size: 20px;
+      width: 200px;
       border: none;
+      border-radius: 15px;
       outline: 0;
       --bezel-width: 5;
-      --bezel-radius: 20px 0px 20px 0px;
+      --bezel-radius: 20px 20px 20px 0px;
       --bezel-color: var(--primary);
       -webkit-mask: paint(bezel, filled);
       background-image: paint(bezel, stroke);
