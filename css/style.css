@@ -1,0 +1,32 @@
+body{
+	height: 100vh;
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px 1fr;
+	align-items: center;
+	justify-items: center;
+
+	--primary:#ffd924;
+	--secondary:#e5961d;
+	--tertiary:#cf4310;
+}
+
+.palette{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 100px;
+	justify-self:stretch;
+}
+
+.palette .primary{
+	background-color: var(--primary);
+}
+
+.palette .secondary{
+	background-color: var(--secondary);
+}
+
+.palette .tertiary{
+	background-color: var(--tertiary);
+}
