@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pokemon Gradient</title>
-	<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pokemon API</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-2.png" />
 </head>
-<body>
-	<div class="palette">
-		<div class="primary"></div>
-		<div class="secondary"></div>
-		<div class="tertiary"></div>
-	</div>
-	<button id="button">Lets Go!</button>
 
-	<script>
-		window.CSS.registerProperty({
+<body>
+  <div class="palette">
+    <span class="primary"></span>
+    <span class="secondary"></span>
+    <span class="tertiary"></span>
+  </div>
+
+  <form action="" id="form">
+  	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" class="pokemon-logo" alt="" width="200">
+  	<div class="card">
+  		<canvas id="canvas" width="100" height="100"></canvas>
+  	<input type="number" placeholder="Buscar" name="id" autocomplete="off" autofocus="" min="1">  	
+  </div>
+  </form>
+
+  <script>
+    window.CSS.registerProperty({
       name: '--primary',
       syntax: '<color>',
       inherits: true,
@@ -35,15 +45,61 @@
     })
     window.CSS.paintWorklet.addModule('bezel.js')
 
-    button.addEventListener('click', () => {
-      updateProperties(['#71bfb1', '#5fa195', '#c55d00'])
-    })
+    form.addEventListener('submit', handleSubmit)
+     async function handleSubmit(event){
+    		event.preventDefault()
+    		const data = new FormData(form)
+    		const id = data.get('id')
+    		const pokemon = await getPokemon(id)
+    		renderPokemon(pokemon)
+    }
+
+    async function getPokemon(id){
+    	const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    	const pokemon = await response.json()
+    	return pokemon 
+    }
+
+    const ctx = canvas.getContext('2d')
+    const image = new Image()
+    image.setAttribute('crossOrigin','anonymous')
+
+
+    function renderPokemon(pokemon){
+    	image.setAttribute('src',pokemon.sprites.front_default)
+    	image.addEventListener('load',()=>{
+    	ctx.clearRect(0,0,canvas.width, canvas.height)
+        ctx.drawImage(image,0,0,canvas.width, canvas.height)
+        getColorPalette(ctx)
+    	})
+    }
+
+
+     function getColorPalette(ctx) {
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data
+      const quality = 90
+      const colors = []
+      for (let i = 0; i < canvas.width * canvas.height; i = i + quality) {
+        const offset = i * 4
+        const alpha = imgData[offset + 3]
+        if (alpha > 0) {
+          const red = imgData[offset]
+          const green = imgData[offset + 1]
+          const blue = imgData[offset + 2]
+          colors.push({ red, green, blue })
+          console.log('%c color', `background: rgba(${red}, ${green}, ${blue})`)
+        }
+      }
+      return colors
+    }
+
 
     function updateProperties(colors) {
       document.body.style.setProperty('--primary', colors[0])
       document.body.style.setProperty('--secondary', colors[1])
       document.body.style.setProperty('--tertiary', colors[2])
     }
-	</script>
+  </script>
 </body>
+
 </html>
