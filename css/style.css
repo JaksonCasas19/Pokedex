@@ -30,3 +30,15 @@ body{
 .palette .tertiary{
 	background-color: var(--tertiary);
 }
+
+ button {
+      padding: 1em 2em;
+      font-size: 20px;
+      border: none;
+      outline: 0;
+      --bezel-width: 5;
+      --bezel-radius: 20px 0px 20px 0px;
+      --bezel-color: var(--primary);
+      -webkit-mask: paint(bezel, filled);
+      background-image: paint(bezel, stroke);
+    }
