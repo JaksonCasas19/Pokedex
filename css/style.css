@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+
 body {
       height: 100vh;
       margin: 0;
@@ -44,6 +46,13 @@ body {
     .palette .tertiary {
       background-color: var(--tertiary);
     }
+
+    .overDown {
+    	height: 20px;
+    }
+    .overDown .tertiary1{
+    	background-color: var(--tertiary);
+    }
     .btn-pokemon{
     	border: none;
       outline: 0;
@@ -66,6 +75,7 @@ body {
       -webkit-mask: paint(bezel, filled);
       background-image: paint(bezel, stroke);
       background-color: #e3e3e3;
+       text-align: center;
     }
 
     canvas{
@@ -77,6 +87,7 @@ body {
 
     .card{
     	background-color: white;
+    	margin: 15px;
     	border-radius: 15px;
     	margin-bottom: 20px;
     	-webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
@@ -88,4 +99,21 @@ body {
 	display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.incognito{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.namePok{
+	text-align: center;
+	text-transform: capitalize;
+	font-family: 'Nunito', sans-serif;
+}
+
+#Answ{
+	height: 150px;
+	width: 160px;
 }
