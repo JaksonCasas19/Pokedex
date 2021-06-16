@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
-
-body {
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+    body {
       height: 100vh;
       margin: 0;
       display: grid;
@@ -47,73 +46,55 @@ body {
       background-color: var(--tertiary);
     }
 
-    .overDown {
-    	height: 20px;
-    }
-    .overDown .tertiary1{
-    	background-color: var(--tertiary);
-    }
-    .btn-pokemon{
-    	border: none;
-      outline: 0;
-      background-color: #0b41a3;
-      color: white;
-      height: 65px;
-      width: auto;
-    }
-
     input {
+      text-align: center;
       padding: 1em 2em;
-      font-size: 20px;
-      width: 200px;
+      font-size: 15px;
       border: none;
-      border-radius: 15px;
       outline: 0;
       --bezel-width: 5;
-      --bezel-radius: 20px 20px 20px 0px;
+      --bezel-radius: 20px 0px 20px 0px;
       --bezel-color: var(--primary);
       -webkit-mask: paint(bezel, filled);
       background-image: paint(bezel, stroke);
-      background-color: #e3e3e3;
-       text-align: center;
+     background: rgb(235,235,235);
+background: linear-gradient(0deg, rgba(235,235,235,1) 0%, rgba(9,9,121,0) 35%, rgba(0,212,255,0) 100%);
     }
-
-    canvas{
-    	display: block;
-    	margin: 0 auto;
-    	padding-top: 25px;
-    	padding-bottom: 5px
+    canvas {
+      display: block;
+      margin: 0 auto;
     }
 
     .card{
-    	background-color: white;
-    	margin: 15px;
-    	border-radius: 15px;
-    	margin-bottom: 20px;
-    	-webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
-		box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26);
+      background-color: white;
+      margin: 15px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26);
     }
 .pokemon-logo{
-	margin-bottom: 20px;
-	padding: 0px 0px 0px 0px;
-	display: block;
+  margin-bottom: 20px;
+  padding: 0px 0px 0px 0px;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .incognito{
-	display: block;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
 .namePok{
-	text-align: center;
-	text-transform: capitalize;
-	font-family: 'Nunito', sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  color: #292929;
+  font-family: 'Nunito', sans-serif;
 }
 
 #Answ{
-	height: 150px;
-	width: 160px;
+  height: 150px;
+  width: 160px;
 }
