@@ -71,6 +71,8 @@ body {
     canvas{
     	display: block;
     	margin: 0 auto;
+    	padding-top: 25px;
+    	padding-bottom: 5px
     }
 
     .card{

@@ -52,6 +52,7 @@
     		const data = new FormData(form)
     		const id = data.get('id')
     		const pokemon = await getPokemon(id)
+    		console.log(pokemon)
     		renderPokemon(pokemon)
     }
 
@@ -67,11 +68,12 @@
 
 
     function renderPokemon(pokemon){
-    	image.setAttribute('src',pokemon.sprites.front_default)
+    	image.setAttribute('src',pokemon.sprites.other.dream_world.front_default)
     	image.addEventListener('load',()=>{
     	ctx.clearRect(0,0,canvas.width, canvas.height)
         ctx.drawImage(image,0,0,canvas.width, canvas.height)
-        getColorPalette(ctx)
+         const colors = getColorPalette(ctx)
+         updateProperties(colors)
     	})
     }
 
@@ -96,9 +98,9 @@
 
 
     function updateProperties(colors) {
-      document.body.style.setProperty('--primary', colors[0])
-      document.body.style.setProperty('--secondary', colors[1])
-      document.body.style.setProperty('--tertiary', colors[2])
+      document.body.style.setProperty('--primary', `rgb(${colors[0].red},${colors[0].green},${colors[0].blue})`)
+      document.body.style.setProperty('--secondary', `rgb(${colors[1].red},${colors[1].green},${colors[1].blue})`)
+      document.body.style.setProperty('--tertiary',`rgb(${colors[2].red},${colors[2].green},${colors[2].blue})`)
     }
   </script>
 </body>
