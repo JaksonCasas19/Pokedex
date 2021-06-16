@@ -61,6 +61,7 @@
     window.CSS.paintWorklet.addModule('bezel.js')
 
     form.addEventListener('submit', handleSubmit)
+    form.addEventListener('touchstart', handleSubmit)
      async function handleSubmit(event){
     		event.preventDefault()
 
