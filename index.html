@@ -7,9 +7,7 @@
   <title>Pokémon API</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-2.png" />
-  
 </head>
-
 <br>
   <div class="card">
   <form action="" id="form">
@@ -28,10 +26,8 @@
         <span class="secondary"style="height: 5px;"></span>
         <span class="tertiary"style="height: 5px;"></span>
       </div>
- 
   </form>
  </div>
-
   <script>
     window.CSS.registerProperty({
       name: '--primary',
@@ -52,9 +48,7 @@
       initialValue: '#cf4310',
     })
     window.CSS.paintWorklet.addModule('bezel.js')
-
     form.addEventListener('submit', handleSubmit)
-
     async function handleSubmit(event) {
       event.preventDefault()
       const data = new FormData(form)
@@ -64,13 +58,11 @@
       const pokemon = await getPokemon(id)
       renderPokemon(pokemon)
     }
-
     async function getPokemon(id) {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
       const pokemon = await response.json()
       return pokemon
     }
-
     const ctx = canvas.getContext('2d')
     const image = new Image()
     image.setAttribute('crossOrigin', 'anonymous')
@@ -86,7 +78,6 @@
         updateProperties(colors)
       })
     }
-
     function getColorPalette(ctx) {
       const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height).data
       const quality = 90
@@ -104,7 +95,6 @@
       }
       return colors
     }
-
     function updateProperties(colors) {
       document.body.style.setProperty('--primary', `rgb(${colors[0].red}, ${colors[0].green}, ${colors[0].blue})`)
       document.body.style.setProperty('--secondary', `rgb(${colors[1].red}, ${colors[1].green}, ${colors[1].blue})`)
@@ -112,6 +102,4 @@
     }
   </script>
 </body>
-
-
 </html>
