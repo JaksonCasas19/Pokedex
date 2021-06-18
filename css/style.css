@@ -1,78 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
-    body {
-      height: 100vh;
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 100px 1fr;
-      align-items: center;
-      justify-items: center;
-
-      --primary: #ffd924;
-      --secondary: #e5961d;
-      --tertiary: #cf4310;
-
-      transition: --primary 1s, --secondary 1s, --tertiary 1s;
-
-      background:
-        linear-gradient(var(--primary), transparent),
-        linear-gradient(90deg, var(--secondary), transparent),
-        linear-gradient(-90deg, var(--tertiary), transparent);
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 1fr;
+  align-items: center;
+  justify-items: center;
+  --primary: #ffd924;
+  --secondary: #e5961d;
+  --tertiary: #cf4310;
+  transition: --primary 1s, --secondary 1s, --tertiary 1s;
+  background:
+    linear-gradient(var(--primary), transparent),
+    linear-gradient(90deg, var(--secondary), transparent),
+    linear-gradient(-90deg, var(--tertiary), transparent);
+  }
+  body:hover {
+  --primary: #71bfb1;
+   --secondary: #5fa195;
+  --tertiary: #c55d00;
     }
 
-    body:hover {
-      --primary: #71bfb1;
-      --secondary: #5fa195;
-      --tertiary: #c55d00;
-    }
+  .palette {
+    justify-self: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px;
+  }
 
+  .palette .primary {
+    background-color: var(--primary);
+  }
 
-    .palette {
-      justify-self: stretch;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 100px;
-    }
+  .palette .secondary {
+    background-color: var(--secondary);
+  }
 
-    .palette .primary {
-      background-color: var(--primary);
-    }
+  .palette .tertiary {
+    background-color: var(--tertiary);
+  }
 
-    .palette .secondary {
-      background-color: var(--secondary);
-    }
+  input {
+  text-align: center;
+   padding: 1em 2em;
+  font-size: 15px;
+   border: none;
+   outline: 0;
+  --bezel-width: 5;
+  --bezel-radius: 20px 0px 20px 0px;
+  --bezel-color: var(--primary);
+   -webkit-mask: paint(bezel, filled);
+   background-image: paint(bezel, stroke);
+   background: rgb(235,235,235);
+   background: linear-gradient(0deg, rgba(235,235,235,1) 0%, rgba(9,9,121,0) 35%, rgba(0,212,255,0) 100%);
+  }
 
-    .palette .tertiary {
-      background-color: var(--tertiary);
-    }
+  canvas {
+    display: block;
+    margin: 0 auto;
+  }
 
-    input {
-      text-align: center;
-      padding: 1em 2em;
-      font-size: 15px;
-      border: none;
-      outline: 0;
-      --bezel-width: 5;
-      --bezel-radius: 20px 0px 20px 0px;
-      --bezel-color: var(--primary);
-      -webkit-mask: paint(bezel, filled);
-      background-image: paint(bezel, stroke);
-     background: rgb(235,235,235);
-background: linear-gradient(0deg, rgba(235,235,235,1) 0%, rgba(9,9,121,0) 35%, rgba(0,212,255,0) 100%);
-    }
-    canvas {
-      display: block;
-      margin: 0 auto;
-    }
-
-    .card{
-      background-color: white;
-      margin: 15px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
+ .card{
+    background-color: white;
+    margin: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26); 
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.26);
-    }
+  }
 .pokemon-logo{
   margin-bottom: 20px;
   margin-top: 10px;
@@ -81,20 +77,17 @@ background: linear-gradient(0deg, rgba(235,235,235,1) 0%, rgba(9,9,121,0) 35%, r
   margin-left: auto;
   margin-right: auto;
 }
-
 .incognito{
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 .namePok{
   text-align: center;
   text-transform: capitalize;
   color: #292929;
   font-family: 'Nunito', sans-serif;
 }
-
 #Answ{
   height: 150px;
   width: 160px;
